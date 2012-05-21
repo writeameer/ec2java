@@ -1,5 +1,6 @@
 import static org.junit.Assert.*;
 import org.junit.Test;
+import org.springframework.util.Assert;
 
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.services.ec2.AmazonEC2;
@@ -26,6 +27,7 @@ public class EC2Test {
 		DescribeInstancesRequest request = new DescribeInstancesRequest();
  
 		DescribeInstancesResult response = ec2Client.describeInstances(request);
+		Assert.notNull(response);
 		System.out.println(response.toString());
 			
 	}
